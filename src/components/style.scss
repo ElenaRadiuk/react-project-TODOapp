@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+$colorGrey-bg: #E5E5E5;
+
+.todo {
+    max-width: 950px;
+    // max-height: 530px;
+    margin: 100px auto;
+    display: flex;
+    height: 530px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+
+    .todo__sidebar {
+        width: 20%;
+        height: 100%;
+        background-color: $colorGrey-bg;
+        padding: 58px 20px;
+        text-align: left;
+
+        img {
+            opacity: 0.7;
+        }
+
+        li {
+            padding: 10px 12px;
+
+            &.active {
+                background: #FFFFFF;
+                box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+                border-radius: 4px;
+            }
+        }
+    }
+
+    .todo__tasks {
+        flex: 1;
+    }
+
+    .todo__list_text {
+        display: inline-block;
+        margin-left: 10px;
+    }
+}
+
