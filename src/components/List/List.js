@@ -1,15 +1,18 @@
 import React from 'react';
 import listIcon from '../../assets/images/list_icon.svg';
 
-const List = () => {
+const List = ({items}) => {
+  console.log(items)
     return(
             <ul className="todo__list">
-              <li>
-                <span><img src={listIcon} alt="icon list"/></span>
-                <span className="todo__list_text">All tasks</span>
-              </li>
+              {items.map(item => (
+                <li className={item.active ? "active" : null}>
+                  <span>{item.icon ? item.icon : <span className={`badge badge--${item.color}`}></span>}</span>
+                  <span className="todo__list_text">{item.name}</span>
+                </li> 
+                ))}
             </ul>
     )
-}
+};
 
 export default List;
