@@ -5,8 +5,8 @@ const List = ({items}) => {
   console.log(items)
     return(
             <ul className="todo__list">
-              {items.map(item => (
-                <li className={item.active ? "active" : null}>
+              {items.map((item, index) => (
+                <li key={index} className={item.active ? "active" : null}>
                   <span>{item.icon ? item.icon : <span className={`badge badge--${item.color}`}></span>}</span>
                   <span className="todo__list_text">{item.name}</span>
                 </li> 

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import List from './components/List/List'
+import AddButton from './components/List/AddButtonList'
 
 import './components/style.scss'
 
@@ -30,6 +31,8 @@ function App() {
                 }
               ]
             }/>
+
+            <AddButton />
           </div>
 
           <div className="todo__tasks">

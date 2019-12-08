@@ -67,3 +67,18 @@ $colorGrey-bg: #E5E5E5;
     }
 }
 
+.add-icon {
+    color: #767676;
+
+    li {
+        
+        &:hover {
+        cursor: pointer;
+        color: black;
+        
+        svg path {
+            stroke: black;
+        }
+        }
+    }
+}
