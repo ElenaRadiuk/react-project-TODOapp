@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import List from './components/List/List'
-import AddButton from './components/List/AddButtonList'
+import AddButton from './components/List/AddButtonList';
+import AddTaskPopUp from './components/AddTaskPopUp/AddTaskPopUp';
 
 import './components/style.scss'
 
@@ -33,6 +34,8 @@ function App() {
             }/>
 
             <AddButton />
+            <AddTaskPopUp />
+           
           </div>
 
           <div className="todo__tasks">
