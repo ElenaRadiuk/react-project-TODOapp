@@ -1,28 +1,44 @@
 .todo__popup {
-    position: relative;
+   position: relative;
+   padding: 30px 15px 10px;
+   width: 250px;
+   height: 120px;
+   background: white;
+   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+
+    .todo__popupClose {
+        position: absolute;
+        top: 5px;
+        right: 8px;
+        cursor: pointer;
+    }
 
     form {
-        position: absolute;
-        width: 250px;
+        width: 100%;
 
         input {
-            position: relative;
-            // &:before {
-            //     position: absolute;
-            //     content: '';
-            //     width: 30px;
-            //     height: 30px;
-            // }
-           
+           position: relative;
+           padding: 5px;
+           margin-bottom: 8px;
+           width: 100%;
+           box-sizing: border-box;  
         }
 
         label {
+            position: relative;
             display: inline-block;
             width: 30px;
-            height: 30px; 
+            height: 30px;
+            margin-right: 8px;
+
+            input {
+                right: -8px;
+            }
+
             &:after {
                 position: absolute;
                 content: '';
+                left: 0;
                 width: 30px;
                 height: 30px;
                 border: 1px solid grey;
@@ -30,5 +46,16 @@
             }
         }
 
+    }
+
+    .todo__popupAddBtn {
+        background-color: #4DD599;
+        color: white;
+        border-radius: 4px;
+        width: 100%;
+        border: none;
+        padding: 10px;
+        margin-top: 12px;
+        text-transform: uppercase;
     }
 }
