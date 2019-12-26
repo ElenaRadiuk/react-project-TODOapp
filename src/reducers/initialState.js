@@ -3,11 +3,12 @@ const initialState = {
         todoList: [],
         newTodo: {
             id: '',
-            text: '',
+            name: '',
             completed: false
         }
     },
     VisibilityFilters: {
+        filters: [],
         SHOW_ALL: true,
         SHOW_ACTIVE: true,
         SHOW_COMPLETED: true

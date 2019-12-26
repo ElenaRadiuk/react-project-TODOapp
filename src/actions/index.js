@@ -16,8 +16,15 @@ export const setVisibilityFilter = filter => ({
     filter
 })
 
-export const visibilityFilter = {
+export const visibilityFilters = {
     SHOW_ALL: 'SHOW_ALL',
     SHOW_ACTIVE: 'SHOW_ACTIVE',
     SHOW_COMPLETED: 'SHOW_COMPLETED'
+}
+
+export const handleInputChange = (name, value) => {
+    return {
+        type: 'HANDLE_INPUT_CHANGE',
+        payload: {[name]: value}
+    }
 }

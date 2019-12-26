@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import './App.css';
 import List from './components/List/List'
 import AddButton from './components/List/AddButtonList';
-import AddTaskPopUp from './components/AddTaskPopUp/AddTaskPopUp';
+import AddTask from './container/AddTask';
 
 import './components/style.scss'
 
@@ -34,7 +34,7 @@ function App() {
             }/>
 
             <AddButton />
-            <AddTaskPopUp />
+            <AddTask />
            
           </div>
 

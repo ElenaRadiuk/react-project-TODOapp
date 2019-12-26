@@ -17,6 +17,12 @@ const todos = (state = initialState.todos, action) => {
                     : todo
                 )
 
+        case 'HANDLE_INPUT_CHANGE': 
+            return {
+                ...state,
+                newTodo: {...state.newTodo, ...action.payload}
+            }
+
         default: return state;     
     }
 }
