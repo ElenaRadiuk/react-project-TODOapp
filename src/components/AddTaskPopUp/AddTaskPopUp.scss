@@ -21,7 +21,12 @@
            padding: 5px;
            margin-bottom: 8px;
            width: 100%;
-           box-sizing: border-box;  
+           box-sizing: border-box;
+           outline: none;
+           
+           &:focus {
+               border: 1px solid lightgrey;
+           }
         }
 
         label {
@@ -31,8 +36,13 @@
             height: 30px;
             margin-right: 8px;
 
+            
+
             input {
                 right: -8px;
+                :checked + .todo__radio_elem {
+                    border: 1px solid grey;
+                }
             }
 
             &:after {
@@ -41,8 +51,52 @@
                 left: 0;
                 width: 30px;
                 height: 30px;
-                border: 1px solid grey;
+                border: 1px solid lightgrey;
                 border-radius: 50%;
+            }
+        }
+
+        .todo__radio_elem {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 30px;
+            height: 30px;
+            border: 1px solid lightgrey;
+            border-radius: 50%;
+            top: 0;
+            // background: rebeccapurple;
+
+            &.redColor {
+                background: red;
+            }
+
+            &.greenColor {
+                background: green;
+            }
+
+            &[for="pinkColor"] {
+                &:after {
+                    background: pink;
+                }
+            }
+
+            &[for="blueColor"] {
+                &:after {
+                    background: blue;
+                }
+            }
+
+            &[for="orangeColor"] {
+                &:after {
+                    background: orange;
+                }
+            }
+
+            &[for="magentaColor"] {
+                &:after {
+                    background: magenta;
+                }
             }
         }
 
@@ -57,5 +111,10 @@
         padding: 10px;
         margin-top: 12px;
         text-transform: uppercase;
+    }
+
+    .todo__choose-color {
+        display: flex;
+        justify-content: space-around;
     }
 }

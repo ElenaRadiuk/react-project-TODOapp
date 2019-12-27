@@ -12,6 +12,7 @@ class AddTask extends Component {
 
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleClosePopup = this.handleClosePopup.bind(this);
     }
 
     handleInputChange(event) {
@@ -30,10 +31,15 @@ class AddTask extends Component {
         this.props.onFormSubmit();
     }
 
+    handleClosePopup() {
+        this.props.onClosePopup();
+    }
+
     render() {
         return(
             <AddTaskPopUp onFormSubmit={this.handleSubmit} 
-              onInputChange={this.handleInputChange}/>
+              onInputChange={this.handleInputChange}
+              onClosePopup={this.handleClosePopup} />
         )
     }
 }
@@ -53,6 +59,9 @@ function mapDispatchToProps(dispatch) {
         },
         onInputChange: (name, value) => {
             dispatch(handleInputChange(name, value))
+        },
+        onClosePopup: (e) => {
+            
         }
     }
 }

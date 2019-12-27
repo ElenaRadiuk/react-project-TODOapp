@@ -12,6 +12,9 @@ const initialState = {
         SHOW_ALL: true,
         SHOW_ACTIVE: true,
         SHOW_COMPLETED: true
+    },
+    ui: {
+        isPopupHidden: true
     }
 }
 

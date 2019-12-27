@@ -28,3 +28,9 @@ export const handleInputChange = (name, value) => {
         payload: {[name]: value}
     }
 }
+
+export const closePopup = (e) => {
+    return {
+        type: 'HANDLE_CLOSE_POPUP'
+    }
+}

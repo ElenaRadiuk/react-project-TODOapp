@@ -29,6 +29,7 @@ $colorGrey-bg: #E5E5E5;
 
         li {
             padding: 10px 12px;
+            display: flex;
 
             &:first-child {
                 margin-bottom: 15px;
@@ -51,6 +52,18 @@ $colorGrey-bg: #E5E5E5;
             }
             &--green {
                 background-color: green;
+            }
+            &--orange {
+                background-color: orange;
+            }
+            &--pink {
+                background-color: pink;
+            }
+            &--blue {
+                background-color: blue;
+            }
+            &--magenta {
+                background-color: magenta;
             }
 
         }

@@ -6,6 +6,7 @@ import AddButton from './components/List/AddButtonList';
 import AddTask from './container/AddTask';
 
 import './components/style.scss'
+import ListMainTask from './container/ListMainTask';
 
 function App() {
   return (
@@ -32,6 +33,8 @@ function App() {
                 }
               ]
             }/>
+
+            <ListMainTask />
 
             <AddButton />
             <AddTask />
