@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
-import { addTodo, handleInputChange } from '../actions'
+import { addTodo, handleInputChange, closePopup } from '../actions'
 
 import AddButton from '../components/List/AddButtonList';
 import AddTaskPopUp from '../components/AddTaskPopUp/AddTaskPopUp';
@@ -12,7 +12,7 @@ class AddTask extends Component {
 
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleClosePopup = this.handleClosePopup.bind(this);
+        this.handleClosePopup = this.closePopup.bind(this);
     }
 
     handleInputChange(event) {
@@ -31,23 +31,35 @@ class AddTask extends Component {
         this.props.onFormSubmit();
     }
 
-    handleClosePopup() {
+    closePopup() {
         this.props.onClosePopup();
+    }
+
+    renderPopup() {
+        return (
+            <AddTaskPopUp onFormSubmit={this.handleSubmit} 
+              onInputChange={this.handleInputChange}
+              onClosePopup={this.closePopup} />
+        )
     }
 
     render() {
         return(
-            <AddTaskPopUp onFormSubmit={this.handleSubmit} 
-              onInputChange={this.handleInputChange}
-              onClosePopup={this.handleClosePopup} />
+            <>
+            { this.props.isHidden === true ? this.renderPopup() : null} 
+            </>
+            // <AddTaskPopUp onFormSubmit={this.handleSubmit} 
+            //   onInputChange={this.handleInputChange}
+            //   onClosePopup={this.closePopup} {...this.props.isPopupHidden} />
         )
     }
 }
 
 function  mapStateToProps(state) {
-    console.log(state);
+    console.log(state + state.todos.newTodo, 'ui state' + state.ui.isPopupHidden);
     return {
-        newTodo: state.todos.newTodo
+        newTodo: state.todos.newTodo,
+        // isHidden: state.ui.isPopupHidden
     }
 }
 
@@ -60,8 +72,8 @@ function mapDispatchToProps(dispatch) {
         onInputChange: (name, value) => {
             dispatch(handleInputChange(name, value))
         },
-        onClosePopup: (e) => {
-            
+        onClosePopup: (task) => {
+            dispatch(closePopup(task))
         }
     }
 }

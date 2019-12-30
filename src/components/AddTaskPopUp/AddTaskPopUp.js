@@ -9,7 +9,7 @@ const AddTaskPopUp = ({onInputChange, onFormSubmit, onClosePopup}) => {
 
     return(
     <div className="todo__popup">
-        <span className="todo__popupClose"> x </span>
+        <span className="todo__popupClose" onClick={onClosePopup}> x </span>
         <form onSubmit={e => {
             e.preventDefault()
             // if (!input.value.trim()) {
@@ -38,7 +38,6 @@ const AddTaskPopUp = ({onInputChange, onFormSubmit, onClosePopup}) => {
 
                 <label htmlFor = "orangeColor" > <span> </span>
                     <input type="radio" id="orangeColor" name="color" value="orange"
-                    checked
                     onChange={onInputChange}/>
                 <div class="todo__radio_elem orangeColor"></div>
                 </label>
@@ -52,7 +51,7 @@ const AddTaskPopUp = ({onInputChange, onFormSubmit, onClosePopup}) => {
                 <label htmlFor = "blueColor" > <span> </span>
                     <input type="radio" id="blueColor" name="color" value="blue"
                     onChange={onInputChange}/>
-                <div class="todo__radio_elem blueColo"></div>    
+                <div class="todo__radio_elem blueColor"></div>    
                 </label>
 
                 <label htmlFor = "magentaColor" > <span> </span>

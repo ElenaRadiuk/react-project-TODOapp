@@ -40,19 +40,23 @@
 
             input {
                 right: -8px;
-                :checked + .todo__radio_elem {
-                    border: 1px solid grey;
+                &:checked  {
+                    & ~ .todo__radio_elem {
+                    border: 2px solid #ababab;
+                    }
                 }
             }
 
-            &:after {
-                position: absolute;
-                content: '';
-                left: 0;
-                width: 30px;
-                height: 30px;
-                border: 1px solid lightgrey;
-                border-radius: 50%;
+            &:checked {
+                // &:after {
+                    position: absolute;
+                    content: '';
+                    left: 0;
+                    width: 30px;
+                    height: 30px;
+                    border: 1px solid lightgrey;
+                    border-radius: 50%;
+                // }
             }
         }
 
@@ -65,6 +69,8 @@
             border: 1px solid lightgrey;
             border-radius: 50%;
             top: 0;
+           
+            transition: transform ease 0.5s;
             // background: rebeccapurple;
 
             &.redColor {
@@ -75,28 +81,24 @@
                 background: green;
             }
 
-            &[for="pinkColor"] {
-                &:after {
-                    background: pink;
-                }
+            &.pinkColor {
+                background: pink;
             }
 
-            &[for="blueColor"] {
-                &:after {
-                    background: blue;
-                }
+            &.blueColor {
+                background: blue;
             }
 
-            &[for="orangeColor"] {
-                &:after {
-                    background: orange;
-                }
+            &.orangeColor {
+                background: orange;
             }
 
-            &[for="magentaColor"] {
-                &:after {
-                    background: magenta;
-                }
+            &.magentaColor {
+                background: magenta;
+            }
+
+            &:hover {
+                 transform: scale(1.1);
             }
         }
 

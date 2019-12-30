@@ -6,6 +6,12 @@ export const addTodo = text => ({
     text
 })
 
+export const deleteTodo = (id) => {
+    return {
+        type: 'DELETE_TODO'
+    }
+}
+
 export const toggleTodo = id => ({
     type: 'TOGGLE_TODO',
     id
@@ -28,6 +34,8 @@ export const handleInputChange = (name, value) => {
         payload: {[name]: value}
     }
 }
+
+
 
 export const closePopup = (e) => {
     return {

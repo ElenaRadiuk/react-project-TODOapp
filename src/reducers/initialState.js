@@ -2,6 +2,7 @@ const initialState = {
     todos: {
         todoList: [],
         newTodo: {
+            _id: '',
             id: '',
             name: '',
             completed: false
