@@ -1,11 +1,11 @@
 import React from 'react';
 import plusIcon from '../../assets/images/plus_icon.svg';
 
-const AddButton = ({items}) => {
+const AddButton = ({items, onClosePopup}) => {
   console.log(items)
   console.log(plusIcon)
     return(
-            <ul className="todo__list add-icon">
+            <ul className="todo__list add-icon" onClick={onClosePopup}>
               
                 <li>
                     <span><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">

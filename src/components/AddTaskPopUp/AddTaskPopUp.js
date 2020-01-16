@@ -27,37 +27,37 @@ const AddTaskPopUp = ({onInputChange, onFormSubmit, onClosePopup}) => {
                     name = "color"
                     value = "red" 
                     onChange={onInputChange}/>
-                <div class="todo__radio_elem redColor"></div>    
+                <div className="todo__radio_elem redColor"></div>    
                 </label>
 
                 <label htmlFor = "greenColor"> <span> </span>
                     <input type="radio" id="greenColor" name="color" value="green"
                     onChange={onInputChange}/>
-                    <div class="todo__radio_elem greenColor"></div>
+                    <div className="todo__radio_elem greenColor"></div>
                 </label>
 
                 <label htmlFor = "orangeColor" > <span> </span>
                     <input type="radio" id="orangeColor" name="color" value="orange"
                     onChange={onInputChange}/>
-                <div class="todo__radio_elem orangeColor"></div>
+                <div className="todo__radio_elem orangeColor"></div>
                 </label>
 
                 <label htmlFor = "pinkColor"> <span > </span> 
                     <input type="radio" id="pinkColor" name="color" value="pink"
                     onChange={onInputChange}/>
-                <div class="todo__radio_elem pinkColor"></div>    
+                <div className="todo__radio_elem pinkColor"></div>    
                 </label>
 
                 <label htmlFor = "blueColor" > <span> </span>
                     <input type="radio" id="blueColor" name="color" value="blue"
                     onChange={onInputChange}/>
-                <div class="todo__radio_elem blueColor"></div>    
+                <div className="todo__radio_elem blueColor"></div>    
                 </label>
 
                 <label htmlFor = "magentaColor" > <span> </span>
                     <input type="radio" id="magentaColor" name="color" value="magenta"
                     onChange={onInputChange}/>
-                <div class="todo__radio_elem magentaColor"></div>    
+                <div className="todo__radio_elem magentaColor"></div>    
                 </label>
             </div>
             <button type="submit" className = "todo__popupAddBtn"

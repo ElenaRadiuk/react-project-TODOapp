@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import List from './components/List/List'
-import AddButton from './components/List/AddButtonList';
+
 import AddTask from './container/AddTask';
 
 import './components/style.scss'
@@ -36,7 +36,7 @@ function App() {
 
             <ListMainTask />
 
-            <AddButton />
+            
             <AddTask />
            
           </div>

@@ -15,7 +15,7 @@ const initialState = {
         SHOW_COMPLETED: true
     },
     ui: {
-        isPopupHidden: true
+        isPopupHidden: false
     }
 }
 

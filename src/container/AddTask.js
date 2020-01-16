@@ -12,7 +12,7 @@ class AddTask extends Component {
 
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleClosePopup = this.closePopup.bind(this);
+        this.handleClosePopup = this.handleClosePopup.bind(this);
     }
 
     handleInputChange(event) {
@@ -31,7 +31,7 @@ class AddTask extends Component {
         this.props.onFormSubmit();
     }
 
-    closePopup() {
+    handleClosePopup() {
         this.props.onClosePopup();
     }
 
@@ -39,13 +39,14 @@ class AddTask extends Component {
         return (
             <AddTaskPopUp onFormSubmit={this.handleSubmit} 
               onInputChange={this.handleInputChange}
-              onClosePopup={this.closePopup} />
+              onClosePopup={this.handleClosePopup} />
         )
     }
 
     render() {
         return(
             <>
+            <AddButton onClosePopup={this.handleClosePopup}/>
             { this.props.isHidden === true ? this.renderPopup() : null} 
             </>
             // <AddTaskPopUp onFormSubmit={this.handleSubmit} 
@@ -56,10 +57,10 @@ class AddTask extends Component {
 }
 
 function  mapStateToProps(state) {
-    console.log(state + state.todos.newTodo, 'ui state' + state.ui.isPopupHidden);
+    console.log(state + state.todos.newTodo, 'ui state' + state.uiReducer.isPopupHidden);
     return {
         newTodo: state.todos.newTodo,
-        // isHidden: state.ui.isPopupHidden
+        isHidden: state.uiReducer.isPopupHidden
     }
 }
 

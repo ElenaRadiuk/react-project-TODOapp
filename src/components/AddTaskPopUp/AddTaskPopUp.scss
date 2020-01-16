@@ -8,9 +8,13 @@
 
     .todo__popupClose {
         position: absolute;
-        top: 5px;
-        right: 8px;
+        top: 2px;
+        right: 0px;
         cursor: pointer;
+        width: 22px;
+        height: 24px;
+        text-align: center;
+        line-height: 20px;
     }
 
     form {
