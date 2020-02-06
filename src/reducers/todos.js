@@ -6,7 +6,9 @@ const todos = (state = initialState.todos, action) => {
             console.log(state)
             return {
                 ...state,
+               
                 todoList: [...state.todoList, state.newTodo]
+                
             }
 
         case 'HANDLE_CLOSE_POPUP':
