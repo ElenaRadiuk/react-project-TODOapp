@@ -1,11 +1,13 @@
 const initialState = {
     todos: {
-        todoList: [],
+        todoList: [{id:1, name:'name'}],
         newTodo: {
             _id: '',
             id: '',
             name: '',
-            completed: false
+            completed: false,
+            active: false,
+            icon: ''
         }
     },
     VisibilityFilters: {

@@ -1,20 +1,40 @@
-import React from 'react';
+import React, { Component } from 'react';
 import listIcon from '../../assets/images/list_icon.svg';
+import Todo from '../Todo';
 
-const List = ({items, onToggle, completed}) => {
-  console.log(items)
+export class List extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+     console.log(this.props.todoList)
+     console.log(this.props.index)
     return(
-            <ul className="todo__list">
-              {items.map((item, index) => (
-                <li key={item.id} className={item.active ? "active" : null}
-                onClick={() => onToggle(item.id)}
-                style ={{textDecoration: completed ? 'line-through' : 'none'}}>
-                  <span>{item.icon ? item.icon : <span className={`badge badge--${item.color}`}></span>}</span>
-                  <span className="todo__list_text">{item.name}</span>
-                </li> 
-                ))}
+       <ul className="todo__list">
+              {console.log(this.props.todoList)}
+              {this.props.todoList.map((todo, index) => (
+                <Todo key={index} id={todo.id} name={todo.name} color={todo.color} todo={todo} index={index+1}
+                    {...todo} onToggle={this.props.onToggle}
+                />
+              ))}
             </ul>
     )
-};
+  }
+}
+
+// const List = ({todoList, onToggle, completed, active}) => {
+//   console.log(todoList)
+//     return(
+//             <ul className="todo__list">
+//               {console.log(todoList)}
+//               {todoList.map((todo, index) => (
+//                 <Todo key={index} id={index} name={todo.name} color={todo.color} todo={todo}
+//                     onToggle={() => onToggle(index)}
+//                 />
+//               ))}
+//             </ul>
+//     )
+// };
 
 export default List;

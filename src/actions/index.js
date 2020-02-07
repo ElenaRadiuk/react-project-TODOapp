@@ -1,9 +1,9 @@
-let nextToDoId = 0;
+let nextToDoId = 1;
 
-export const addTodo = text => ({
+export const addTodo = name => ({
     type: 'ADD_TODO',
     id: nextToDoId++,
-    text
+    name
 })
 
 export const deleteTodo = (id) => {
