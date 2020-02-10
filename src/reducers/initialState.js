@@ -1,6 +1,6 @@
 const initialState = {
     todos: {
-        todoList: [{id:1, name:'name'}],
+        todoList: [{id:17, name:'name'}],
         newTodo: {
             _id: '',
             id: '',
@@ -8,7 +8,13 @@ const initialState = {
             completed: false,
             active: false,
             icon: ''
-        }
+        }, 
+        subTodoList: [{
+            parent_id: '1',
+            id: 'sub1',
+            name: 'some text',
+            completed: false
+        }]
     },
     VisibilityFilters: {
         filters: [],
@@ -17,7 +23,8 @@ const initialState = {
         SHOW_COMPLETED: true
     },
     ui: {
-        isPopupHidden: false
+        isPopupHidden: false,
+        isPopupSubHidden: false
     }
 }
 

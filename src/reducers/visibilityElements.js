@@ -12,6 +12,13 @@ export default function uiReducer(state = initialState.ui, action) {
             }
         }
 
+        case "HANDLE_CLOSE_POPUP_SUB": {
+            return {
+                ...state,
+                isPopupSubHidden: !state.isPopupSubHidden
+            }
+        }
+
         default: return state    
     }
 }

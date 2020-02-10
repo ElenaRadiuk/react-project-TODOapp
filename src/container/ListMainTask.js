@@ -38,7 +38,8 @@ class ListMainTask extends Component {
                          {
                              name: 'task 1',
                              id: '2t',
-                             color: 'green'
+                             color: 'green',
+                             completed: true
                          },
                          {
                              name: 'task 2',
@@ -63,7 +64,6 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-    
     return {
         onToggle: (todo) => {
                 dispatch(toggleTodo(todo))

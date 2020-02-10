@@ -13,31 +13,29 @@ const todos = (state = initialState.todos, action) => {
             })
             return {
                 ...state,
-               
-                todoList: [...state.todoList, state.newTodo]
-                
+                todoList: [...state.todoList, state.newTodo] 
             }
 
-        case 'HANDLE_CLOSE_POPUP':
-            console.log(state);
-            let list = state.todoList.map(todo => todo)
-            console.log('state.todoList close' + state.todoList + 'list' + list);
-            const filterTodo = state.todoList.filter((task) => task.id !== action.id);
-            console.log(filterTodo);
-            return {
-                ...state,
-                todoList: filterTodo
-            }
+        // case 'HANDLE_CLOSE_POPUP':
+        //     console.log(state);
+        //     let list = state.todoList.map(todo => todo)
+        //     console.log('state.todoList close' + state.todoList + 'list' + list);
+        //     let filterTodo = state.todoList.filter((task) => task.id !== action.id);
+        //     console.log(filterTodo);
+        //     return {
+        //         ...state,
+        //         todoList: filterTodo
+        //     }
 
         case 'TOGGLE_TODO': 
-            console.log("state" + state.todoList.map(todo => todo) + 'act' +action.id)
-            // return state.todoList.map(todo =>
-            //     (todo.id === action.id)
-            //       ? {...todo, completed: !todo.completed}
-            //         : todo
-            //     )
-            return {
-                ...state
+            console.log("todoList" + state.todoList);
+            let toggleTodo = state.todoList.map((task) => task.id === action.id 
+                ? {...task, completed: !task.completed } : task);
+
+            console.log("toggleTodo" + toggleTodo)
+               return {
+                ...state,
+                todoList: toggleTodo
             }
 
         case 'HANDLE_INPUT_CHANGE': 

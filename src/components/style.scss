@@ -71,6 +71,7 @@ $colorGrey-bg: #E5E5E5;
 
     .todo__tasks {
         flex: 1;
+        position: relative;
         padding: 58px 20px;
     }
 
@@ -93,5 +94,15 @@ $colorGrey-bg: #E5E5E5;
             stroke: black;
         }
         }
+    }
+}
+
+.todo__addPopup-container {
+     position: absolute;
+     bottom: 38px;
+
+    .todo__popup {
+        position: absolute;
+        z-index: 101;
     }
 }

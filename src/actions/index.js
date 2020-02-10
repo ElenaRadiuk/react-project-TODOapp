@@ -42,3 +42,9 @@ export const closePopup = (e) => {
         type: 'HANDLE_CLOSE_POPUP'
     }
 }
+
+export const closePopupSubTask = (e) => {
+    return {
+        type: 'HANDLE_CLOSE_POPUP_SUB'
+    }
+}

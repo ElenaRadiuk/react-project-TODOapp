@@ -4,9 +4,11 @@ import './App.css';
 import List from './components/List/List'
 
 import AddTask from './container/AddTask';
+import AddSubTask from './container/AddSubTask';
 
 import './components/style.scss'
 import ListMainTask from './container/ListMainTask';
+import ListSubTask from './container/ListSubTask';
 
 function App() {
   return (
@@ -24,6 +26,9 @@ function App() {
 
           <div className="todo__tasks">
           задачи
+
+          <ListSubTask />
+          <AddSubTask />
           </div>
            
         </div>
