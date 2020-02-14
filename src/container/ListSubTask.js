@@ -22,7 +22,7 @@ class ListSubTask extends Component {
         // console.log(...this.props.items)
         return(
             <div>
-                <ListSub subTodoList={this.props.subTodoList} onToggle={this.handleToggleTodo} {...this.props.subTodoList}/>
+                <ListSub todoList={this.props.todoList} subTodoList={this.props.subTodoList} onToggle={this.handleToggleTodo} {...this.props.subTodoList}/>
             </div>
         )
     }
@@ -31,7 +31,8 @@ class ListSubTask extends Component {
 function mapStateToProps(state) {
     console.log(state.todos.subTodoList)
     return {
-        subTodoList: state.todos.subTodoList
+        subTodoList: state.todos.subTodoList,
+        todoList: state.todos.todoList
     }
 }
 

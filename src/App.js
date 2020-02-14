@@ -18,17 +18,15 @@ function App() {
           <div className="todo__sidebar">
            
             <ListMainTask />
-
-            
             <AddTask />
            
           </div>
 
           <div className="todo__tasks">
-          задачи
+            задачи
 
-          <ListSubTask />
-          <AddSubTask />
+            <ListSubTask />
+            <AddSubTask />
           </div>
            
         </div>

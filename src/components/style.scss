@@ -30,6 +30,7 @@ $colorGrey-bg: #E5E5E5;
         li {
             padding: 10px 12px;
             display: flex;
+            position: relative;
 
             &:first-child {
                 margin-bottom: 15px;
@@ -67,6 +68,15 @@ $colorGrey-bg: #E5E5E5;
             }
 
         }
+
+        .todo__inProgress {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            font-size: 12px;
+            background: lightgoldenrodyellow;
+            cursor: pointer;
+         }
     }
 
     .todo__tasks {
@@ -78,7 +88,10 @@ $colorGrey-bg: #E5E5E5;
     .todo__list_text {
         display: inline-block;
         margin-left: 10px;
+        cursor: pointer;
     }
+
+   
 }
 
 .add-icon {

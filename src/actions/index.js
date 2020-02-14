@@ -1,8 +1,16 @@
 let nextToDoId = 1;
+let nextSubToDoId = 1;
 
 export const addTodo = name => ({
     type: 'ADD_TODO',
     id: nextToDoId++,
+    name
+})
+
+export const addSubTodo = (name) => ({
+    type: 'ADD_SUB_TODO',
+    id: nextSubToDoId++,
+    // parent_id,
     name
 })
 
@@ -14,6 +22,11 @@ export const deleteTodo = (id) => {
 
 export const toggleTodo = id => ({
     type: 'TOGGLE_TODO',
+    id
+})
+
+export const activeTodo = id => ({
+    type: 'ACTIVE_TODO',
     id
 })
 
@@ -32,6 +45,15 @@ export const handleInputChange = (name, value) => {
     return {
         type: 'HANDLE_INPUT_CHANGE',
         payload: {[name]: value}
+    }
+}
+
+export const handleInputChangeSub = (name, value) => {
+    return {
+        type: 'HANDLE_INPUT_CHANGE_SUB',
+        payload: {
+            [name]: value
+        }
     }
 }
 

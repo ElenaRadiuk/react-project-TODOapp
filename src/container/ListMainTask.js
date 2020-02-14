@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
-import { addTodo, handleInputChange, toggleTodo } from '../actions';
+import { addTodo, handleInputChange, toggleTodo, activeTodo } from '../actions';
 import List from '../components/List/List'
 
 class ListMainTask extends Component {
@@ -9,6 +9,7 @@ class ListMainTask extends Component {
         super(props);
 
         this.handleToggleTodo = this.handleToggleTodo.bind(this);
+        this.handleActiveTodo = this.handleActiveTodo.bind(this);
     }
 
     handleToggleTodo(todo) {
@@ -17,6 +18,10 @@ class ListMainTask extends Component {
         console.log('toggle&item name' + todo.name)
         console.log('toggle&item name' + todo.id)
     }  
+    handleActiveTodo(todo) {
+        console.log('act&item todo' + todo)
+        this.props.onActive(todo)
+    }
 
     render() {
         // console.log(...this.props.items)
@@ -44,13 +49,14 @@ class ListMainTask extends Component {
                          {
                              name: 'task 2',
                              id: '3t',
-                             color: 'red'
+                             color: 'red',
+                             active: true
                          }
                      ]
                  }
                  />
 
-                <List todoList={this.props.todoList} onToggle={this.handleToggleTodo} {...this.props.todoList}/>
+                <List todoList={this.props.todoList} onToggle={this.handleToggleTodo} onActive={this.handleActiveTodo}{...this.props.todoList}/>
             </div>
         )
     }
@@ -68,7 +74,11 @@ function mapDispatchToProps(dispatch) {
         onToggle: (todo) => {
                 dispatch(toggleTodo(todo))
                 console.log('near disp' + todo)
-            }
+            },
+        onActive: (todo) => {
+                dispatch(activeTodo(todo))
+                console.log("on active:" + todo)
+        }    
     }
 }
 

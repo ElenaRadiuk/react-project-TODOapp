@@ -15,7 +15,7 @@ export class List extends Component {
               {console.log(this.props.todoList)}
               {this.props.todoList.map((todo, index) => (
                 <Todo key={index} id={todo.id} name={todo.name} color={todo.color} todo={todo} index={index+1}
-                    {...todo} onToggle={this.props.onToggle}
+                    {...todo} onToggle={this.props.onToggle} onActive={this.props.onActive}
                 />
               ))}
             </ul>

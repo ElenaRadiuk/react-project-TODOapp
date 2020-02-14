@@ -15,7 +15,22 @@ const todos = (state = initialState.todos, action) => {
                 ...state,
                 todoList: [...state.todoList, state.newTodo] 
             }
+        
 
+        case 'ADD_SUB_TODO':
+        console.log('state ' + state)
+        console.log('action text ' + action.name)
+        console.log('action id ' + action.id)
+        // let activeTodoParent
+        state.newSubTodo = Object.assign(state.newSubTodo, {
+            id: action.id,
+            // name: action.name,
+            completed: false
+        })
+        return {
+            ...state,
+            subTodoList: [...state.subTodoList, state.newSubTodo]
+        }
         // case 'HANDLE_CLOSE_POPUP':
         //     console.log(state);
         //     let list = state.todoList.map(todo => todo)
@@ -38,11 +53,35 @@ const todos = (state = initialState.todos, action) => {
                 todoList: toggleTodo
             }
 
+        case 'ACTIVE_TODO':
+            console.log("todoList" + state.todoList);
+            let activeTodo = state.todoList.map((task) => task.id === action.id 
+                ? {...task, active: !task.active} : {...task, active: false});
+            
+            let activeTab = state.todoList.map((task) => task.id === action.id 
+                ? {...state, activeTab: task.id} : {...state, activeTab: ''});    
+
+            console.log("activeTodo777" + activeTodo + activeTab)
+            console.log(state)
+            return {
+                ...state,
+                todoList: activeTodo,
+                activeTab: activeTab
+            }
+
         case 'HANDLE_INPUT_CHANGE': 
             return {
                 ...state,
                 newTodo: {...state.newTodo, ...action.payload}
             }
+
+        case 'HANDLE_INPUT_CHANGE_SUB':
+        return {
+            ...state,
+            newSubTodo: {
+                ...state.newSubTodo, ...action.payload
+            }
+        }
 
         default: return state;     
     }

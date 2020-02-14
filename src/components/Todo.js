@@ -35,16 +35,24 @@ export class Todo extends Component {
             return (
                 <>
                <li key={this.props.index}
-                   className={this.props.active ? "active" : null}
-                           onClick={() => this.props.onToggle(this.props.id)}
-                           style ={{textDecoration: this.props.completed ? 'line-through' : 'none'}}
-                           >
+                   className={this.props.active ? "active" : null}>
                        <span className={`index-${this.props.index}`}>{this.props.todo.icon ? this.props.todo.icon 
                                    : <span className={`badge badge--${this.props.todo.color}`}></span>} 
                        </span>
-                       <span className="todo__list_text">{this.props.todo.name}</span>
+                       <span className="todo__list_text" onClick={() => this.props.onActive(this.props.id)}
+                            style ={{textDecoration: this.props.completed ? 'line-through' : 'none'}}>
+                                {this.props.todo.name}
+                        </span>
+                       { this.props.active ? (
+                       <span className="todo__inProgress" onClick={() => this.props.onToggle(this.props.id)}>
+                           change status:{this.props.completed ? "done" : "in progress"}
+                       </span>
+                       )
+                            : (null)
+                       }
+                     
                        {
-                          console.log(this.props.id)
+                          console.log(this.props.id + 'par' + this.props.parent_id)
                        }
                 </li>  
                 </>

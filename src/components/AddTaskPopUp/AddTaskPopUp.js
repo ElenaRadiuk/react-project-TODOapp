@@ -4,7 +4,7 @@ import './AddTaskPopUp.scss';
 // import { addTodo } from '../../actions'
 
 
-const AddTaskPopUp = ({onInputChange, onFormSubmit, onClosePopup}) => {
+const AddTaskPopUp = ({onInputChange, onFormSubmit, onClosePopup, parent_id}) => {
     let input;
 
     return(
@@ -19,7 +19,7 @@ const AddTaskPopUp = ({onInputChange, onFormSubmit, onClosePopup}) => {
             // )
             // input.value = ''
             }}>
-            <input type="text" placeholder="enter task" name="name" onChange={onInputChange}/>
+            <input type="text" placeholder="enter task" name="name" parent_id={parent_id} onChange={onInputChange}/>
             <div className="todo__choose-color">
                 <label htmlFor="redColor"><span></span>
                 <input type = "radio"
