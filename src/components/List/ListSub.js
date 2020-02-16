@@ -22,7 +22,7 @@ export class ListSubTask extends Component {
               {this.props.subTodoList.map((todo, index) => (
                 <>
                 <Todo key={index} id={todo.id} name={todo.name} color={todo.color} todo={todo} index={index+1}
-                    {...todo} onToggle={this.props.onToggle} parent_id={parent_id}
+                    {...todo} onToggle={this.props.onToggle} avtiveTab={this.props.avtiveTab}
                 />
                 {
                   console.log('todo.name' + todo.name)

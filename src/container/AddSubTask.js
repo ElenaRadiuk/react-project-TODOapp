@@ -39,7 +39,7 @@ class AddSubTask extends Component {
         return (
             <AddTaskPopUp onFormSubmit={this.handleSubmit} 
               onInputChange={this.handleInputChangeSub}
-              onClosePopup={this.handleClosePopup} />
+              onClosePopup={this.handleClosePopup} activeTab={this.props.activeTab}/>
         )
     }
 
@@ -60,17 +60,18 @@ function  mapStateToProps(state) {
     console.log('newSubTodo ' + state + state.todos.newSubTodo);
     return {
         newSubTodo: state.todos.newSubTodo,
-        isPopupSubHidden: state.uiReducer.isPopupSubHidden
+        isPopupSubHidden: state.uiReducer.isPopupSubHidden,
+        activeTab: state.todos.activeTab
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-        onFormSubmit: (newSubTodo) => {
-            console.log('dispatch add sub' + newSubTodo);
-            dispatch(addSubTodo(newSubTodo));
+        onFormSubmit: (newSubTodo, activeTab) => {
+            console.log('dispatch add sub' + newSubTodo + 'activeTab' + activeTab);
+            dispatch(addSubTodo(newSubTodo, activeTab));
         },
-        onInputChange: (name, value) => {
+        onInputChange: (name, value, activeTab) => {
              console.log('name, value' + name + value);
             dispatch(handleInputChangeSub(name, value))
         },

@@ -3,14 +3,14 @@ let nextSubToDoId = 1;
 
 export const addTodo = name => ({
     type: 'ADD_TODO',
-    id: nextToDoId++,
+    id: 'main_id' + nextToDoId++,
     name
 })
 
-export const addSubTodo = (name) => ({
+export const addSubTodo = (name, activeTab) => ({
     type: 'ADD_SUB_TODO',
     id: nextSubToDoId++,
-    // parent_id,
+    activeTab,
     name
 })
 
@@ -41,7 +41,7 @@ export const visibilityFilters = {
     SHOW_COMPLETED: 'SHOW_COMPLETED'
 }
 
-export const handleInputChange = (name, value) => {
+export const handleInputChange = (name, value, activeTab) => {
     return {
         type: 'HANDLE_INPUT_CHANGE',
         payload: {[name]: value}

@@ -13,17 +13,19 @@ const todos = (state = initialState.todos, action) => {
             })
             return {
                 ...state,
-                todoList: [...state.todoList, state.newTodo] 
+                todoList: [...state.todoList, state.newTodo],
+                activeTab: action.id
             }
         
 
         case 'ADD_SUB_TODO':
         console.log('state ' + state)
-        console.log('action text ' + action.name)
+        console.log('action.activeTab ' + state.activeTab)
         console.log('action id ' + action.id)
         // let activeTodoParent
         state.newSubTodo = Object.assign(state.newSubTodo, {
             id: action.id,
+            parent_id: state.activeTab,
             // name: action.name,
             completed: false
         })
@@ -58,15 +60,15 @@ const todos = (state = initialState.todos, action) => {
             let activeTodo = state.todoList.map((task) => task.id === action.id 
                 ? {...task, active: !task.active} : {...task, active: false});
             
-            let activeTab = state.todoList.map((task) => task.id === action.id 
-                ? {...state, activeTab: task.id} : {...state, activeTab: ''});    
+            let activeTab = activeTodo.filter((task) => task.active 
+                ? task.id : '');    
 
-            console.log("activeTodo777" + activeTodo + activeTab)
+            console.log("activeTodo777" + activeTodo + 'activeTab' + activeTab.id)
             console.log(state)
             return {
                 ...state,
                 todoList: activeTodo,
-                activeTab: activeTab
+                activeTab: activeTab.id
             }
 
         case 'HANDLE_INPUT_CHANGE': 

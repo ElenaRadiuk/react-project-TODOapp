@@ -22,7 +22,10 @@ class ListSubTask extends Component {
         // console.log(...this.props.items)
         return(
             <div>
-                <ListSub todoList={this.props.todoList} subTodoList={this.props.subTodoList} onToggle={this.handleToggleTodo} {...this.props.subTodoList}/>
+                <ListSub todoList={this.props.todoList} 
+                subTodoList={this.props.subTodoList} 
+                onToggle={this.handleToggleTodo} {...this.props.subTodoList}
+                activeTab={this.props.activeTab}/>
             </div>
         )
     }
@@ -30,9 +33,11 @@ class ListSubTask extends Component {
 
 function mapStateToProps(state) {
     console.log(state.todos.subTodoList)
+    console.log('activeTab' + state.todos.activeTab)
     return {
         subTodoList: state.todos.subTodoList,
-        todoList: state.todos.todoList
+        todoList: state.todos.todoList,
+        activeTab: state.todos.activeTab
     }
 }
 

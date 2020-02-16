@@ -24,7 +24,7 @@ const initialState = {
             name: 'some text',
             completed: false
         }],
-        activeTab: ''
+        activeTab: '1232'
     },
     VisibilityFilters: {
         filters: [],
