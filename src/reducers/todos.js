@@ -57,18 +57,22 @@ const todos = (state = initialState.todos, action) => {
 
         case 'ACTIVE_TODO':
             console.log("todoList" + state.todoList);
+            console.log('activeTab before' + state.activeTab)
             let activeTodo = state.todoList.map((task) => task.id === action.id 
                 ? {...task, active: !task.active} : {...task, active: false});
             
-            let activeTab = activeTodo.filter((task) => task.active 
-                ? task.id : '');    
+            let activeTab = '';   
+                 for (var ac of activeTodo) {
+                     console.log(ac);
+                    activeTab = ac.id
+                 } 
 
-            console.log("activeTodo777" + activeTodo + 'activeTab' + activeTab.id)
+            console.log("activeTodo777" + activeTodo + 'activeTab' + activeTab)
             console.log(state)
             return {
                 ...state,
                 todoList: activeTodo,
-                activeTab: activeTab.id
+                activeTab: activeTab
             }
 
         case 'HANDLE_INPUT_CHANGE': 
